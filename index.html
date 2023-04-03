@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Acme&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@1,500;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@700&family=Pacifico&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Ubuntu+Condensed&family=Ubuntu:wght@500&family=Work+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0%;
+        box-sizing: border-box;
+    }
+
+    /* header */
+
+    nav{
+        width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    box-shadow: 0px 0px 17px 5px #0000004f;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+
+    }
+    nav .logo-div{
+        width: 60px;
+    height: 60px;
+    margin: 0 0 0 30px;
+    }
+    nav .logo-div img{
+        width: 100%;
+        border-radius: 50%;
+    }
+    nav .content-div {
+        width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Poppins";
+    }
+
+    
+    nav .content-div h1 {
+            color: #aaaabb;
+    font-family: "Poppins";
+
+    }
+    nav .content-div ul{}
+    nav .content-div ul li{
+        list-style: none;
+    }
+    nav .content-div ul li a{
+        text-decoration: none;
+    color: #9f9fb1;
+    font-weight: 600;
+    }
+    /* keybard */
+    .keyboard-div{
+        background-color: rgb(225, 229, 235);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+    padding: 60px 0;
+    flex-direction: column;
+    }
+    .keyboard{
+        width: 1000px;
+        background: transparent;
+    }
+    .keyboard .row ,.numpad .row{
+        display: flex;
+        height: 62px;
+    }
+    .keyboard .row span , .numpad .row span{
+        background-color: white;
+        color: #807676;
+        padding: 0 20px 8px;
+    border-radius: 2px;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    margin: 0 5px;
+    justify-content: center;
+    align-items: end;
+    box-shadow: 0px 0px 2px #0000006b;
+    font-size: 17px;
+    font-family: 'Inter';
+    }
+    .keyboard .row:nth-child(1){
+        height: 30px;
+        
+    }
+    .keyboard .row:nth-child(1) span{
+        padding: 1px 11px;
+    min-width: 60px;
+    height: 25px;
+
+    font-size: 14px;
+    }
+    .keyboard .row .space{
+        width: 250px;
+    }
+    .keyboard .row .tab{
+        width: 90px;
+    }
+    .keyboard .row .alt{
+
+    }
+    .keyboard .row .shift{
+
+    }
+    .keyboard .row .t-design{
+        font-size: 15px;
+    padding: 0 34px 8px 6px;
+    justify-content: left;
+    }
+
+    /* for arrow keys */
+
+   .keyboard .row .arrowkey{
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+   }
+    .keyboard .row .arrowkey span{
+        padding: 0;
+    height: 25px;
+    font-size: 13px;
+    align-items: center;
+    }
+    .arrowkey div div{
+        padding: 0;
+    height: 25px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    background-color: white;
+    min-width: 50px;
+    margin: 4px 0 0 0;
+    align-items: center;
+    }
+
+
+
+    /* for numpad */
+
+    .numpad-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .numpad-div h1{
+        color: #aaaabb;
+    font-family: "Inter";
+    font-weight: 600;
+    margin: 30px 0;
+    }
+    .numpad{
+        display: flex;
+    }
+
+
+/*  for adjustent of num lock key*/
+    .numpad .left-div .row span:nth-child(1){
+        padding: 0;
+    font-size: 14px;
+    align-items: center;
+    }
+
+/*  for adjustent of 0 key*/
+.numpad .left-div .row:nth-child(5) span:nth-child(1){
+    width: 96px;
+}
+    .numpad .right-div div{
+        background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin:0 0 12px 0;
+        color: #807676;
+        padding: 0 20px 8px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px #0000006b;
+    font-size: 17px;
+    font-family: 'Inter';
+    }
+    .numpad .right-div div:nth-child(2),
+    .numpad .right-div div:nth-child(3){
+        height: 112px;
+    }
+</style>
+<body>
+    <div class="main-container">
+            <nav>
+                <div class="logo-div">
+                    <img src="img/pic.jpg" alt="" clogo">
+                </div>
+                <div class="content-div">
+                    <h1><i class="fa fa-keyboard-o"></i> Keyboard Checker</h1>
+                    <ul>
+                        <li>Developed by <a href="muhammadhamd.github.io/portfolio">Muhammad Hamd</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        <div class="keyboard-div">
+            <div class="main-keybd-c">
+                <div class="keyboard">
+                    <div class="row">
+                        <span class="">Esc</span>
+                        <span class="">F1</span>
+                        <span class="">F2</span>
+                        <span class="">F3</span>
+                        <span class="">F4</span>
+                        <span class="">F5</span>
+                        <span class="">F6</span>
+                        <span class="">F7</span>
+                        <span class="">F8</span>
+                        <span class="">F9</span>
+                        <span class="">F10</span>
+                        <span class="">F11</span>
+                        <span class="">F12</span>
+                    </div>
+                    <div class="row">
+                        <span class="">` <br> ~</span>
+                        <span class="">! <br> 1</span>
+                        <span class="">@ <br> 2</span>
+                        <span class=""># <br> 3</span>
+                        <span class="">$ <br> 4</span>
+                        <span class="">% <br> 5</span>
+                        <span class="">^ <br> 6</span>
+                        <span class="">& <br> 7</span>
+                        <span class="">* <br> 8</span>
+                        <span class="">( <br> 9</span>
+                        <span class="">) <br> 10</span>
+                        <span class="">_ <br> -</span>
+                        <span class="">+ <br> =</span>
+                        <span class="">BackSpace</span>
+                    </div>
+                    <div class="row">
+                        <span class="t-design tab">tab</span>
+                        <span class="">Q</span>
+                        <span class="">W</span>
+                        <span class="">E</span>
+                        <span class="">R</span>
+                        <span class="">T</span>
+                        <span class="">Y</span>
+                        <span class="">U</span>
+                        <span class="">I</span>
+                        <span class="">O</span>
+                        <span class="">P</span>
+                        <span class="">{ <br> [</span>
+                        <span class="">} <br> ]</span>
+                        <span class="">| <br> \</span>
+    
+                    </div>
+                    <div class="row">
+                        <span class="t-design capslick">capslock</span>
+                        <span class="">A</span>
+                        <span class="">S</span>
+                        <span class="">D</span>
+                        <span class="">F</span>
+                        <span class="">G</span>
+                        <span class="">H</span>
+                        <span class="">J</span>
+                        <span class="">K</span>
+                        <span class="">L</span>
+                        <span class="">: <br> ;</span>
+                        <span class="">" <br> '</span>
+                        <span class="enter">enter</span>
+                    </div>
+                   <div class="row">
+                        <span class="shift t-design">shift</span>
+                        <span class="">Z</span>
+                        <span class="">X</span>
+                        <span class="">C</span>
+                        <span class="">V</span>
+                        <span class="">B</span>
+                        <span class="">N</span>
+                        <span class="">M</span>
+                        <span class=""><,</span>
+                        <span class="">>.</span>
+                        <span class="">? <br> /</span>
+                        <span class="Shift t-design">shift</span>
+                    </div>  
+                    <div class="row">
+                        <span class="ctrl">ctrl</span>
+                        <span class="windows">windows</span>
+                        <span class="alt">alt</span>
+                        <span class="space"></span>
+                        <span class="alt">alt</span>
+                        <span class="windows">windows</span>
+                        <span class="ctrl">ctrl</span>
+                        <span class="arrowkey">
+                            <span><i class="fa fa-arrow-left"></i></span>
+                            <div>
+                                <div><i class="fa fa-arrow-up"></i></div>
+                                <div><i class="fa fa-arrow-down"></i></div>
+                            </div>
+                            <span><i class="fa fa-arrow-right"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- numpad checker-->
+            <div class="numpad-div">
+                <h1>Numpad</h1>
+                <div class="numpad">
+                    <div class="left-div">
+                        <div class="row">
+                            <span>num<br>Lock</span>
+                            <span>/</span>
+                            <span>*</span>
+                        </div>
+                        <div class="row">
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                        </div>
+                        <div class="row">
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                        </div>
+                        <div class="row">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </div>
+                        <div class="row">
+                            <span>0</span>
+                            <span>.<br>del</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-div">
+                        <div>-</div>
+                        <div>+</div>
+                        <div>enter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+
+
+
+
+
+                // for keydown
+
+
+                addEventListener("keydown",
+        function(key){
+            key.preventDefault();
+
+            // this script only target 3rd row
+            if (key.which == 9) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 87) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 69) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 82) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 84) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 89) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 85) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 73) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 79) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 80) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 219) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(12)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 221) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(13)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+
+
+            // this script only target 4rd row
+            if (key.which == 20) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 65) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 83) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 68) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 70) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 71) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 72) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 74) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 75) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 76) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 186) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 222) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(12)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 13) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(13)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 220) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(14)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 65) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 83) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 68) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 70) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 71) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 72) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 74) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 75) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 76) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 186) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 222) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(12)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 13) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(13)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 220) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(14)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+
+
+            // this for line 5
+
+            if (key.which == 90) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 88) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 67) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 86) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 66) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 78) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 77) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 188) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 190) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 191) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+
+
+            // for digit keys
+            if (key.which == 192) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"} 
+
+            if (key.which == 49) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 50) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 51) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 52) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 53) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+
+            if (key.which == 8) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(14)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 54) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 55) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 56) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 57) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 48) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white" }
+            if (key.which == 189) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(12)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 187) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(13)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+
+
+            // FOR F KEYS 
+
+            if (key.which == 27) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white" } 
+
+            if (key.which == 112) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 113) { document.querySelector(".keyboard .row:nth-child(1) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 114) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 115) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(5)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 116) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(6)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            if (key.which == 117) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(7)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 118) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(8)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 119) { document.querySelector(".keyboard .row:nth-child(1) span:nth-child(9)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 120) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(10)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 121) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(11)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 122) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(12)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 123) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(13)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+
+            // FOR ROW 6TH
+
+            if (key.which == 32) {document.querySelector(".keyboard .row:nth-child(6) span:nth-child(4)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+
+            // FOR OTHER KEYS
+
+            // for arrow keys only
+
+            if (key.which == 37) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 39) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 38) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey div div:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 40) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey div div:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+              
+
+
+
+ //for alt key
+
+ let rightAlt = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(5)"),
+                 leftAlt = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(3)");
+
+                 if(key.which == 18){
+
+                    if (event.location == 1){leftAlt.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                    if (event.location == 2){rightAlt.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                 }
+
+
+                //  for windows key
+
+                let rightWindows = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(6)"),
+                 leftWindows = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(2)");
+
+                 if(key.which == 91){leftWindows.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                 if(key.which == 92){rightWindows.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                 
+            // for shift key
+
+
+
+            let rightShift = document.querySelector(".keyboard .row:nth-child(5) span:nth-child(12)"),
+                 leftShift = document.querySelector(".keyboard .row:nth-child(5) span:nth-child(1)")
+
+                 if(key.which == 16){
+
+                    if (event.location == 1){leftShift.style = "background-color:rgb(200 200 206 / 63%);color:white"};
+                    if (event.location == 2){rightShift.style = "background-color:rgb(200 200 206 / 63%);color:white"};
+                 }
+
+
+                //  fon ctrl key
+                 let rightctrl = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(7)"),
+                 leftctrl = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(1)");
+
+                 if(key.which == 17){
+
+                    if (event.location == 1){leftctrl.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                    if (event.location == 2){rightctrl.style = "background-color:rgb(200 200 206 / 63%);color:white"}
+                 }
+                })
+
+
+                // for keyup
+
+                addEventListener("keyup",
+        function(key){
+            key.preventDefault();
+
+            // this script only target 3rd row
+            if (key.which == 9) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(1)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 81) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(1)").style ="background-color:#10d510;color:white" }
+            if (key.which == 81) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(2)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 87) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(3)").style ="background-color:#10d510;color:white" }
+            if (key.which == 69) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(4)").style ="background-color:#10d510;color:white" }
+            if (key.which == 82) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(5)").style ="background-color:#10d510;color:white" }
+            if (key.which == 84) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(6)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 89) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(7)").style ="background-color:#10d510;color:white" }
+            if (key.which == 85) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(8)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 73) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(9)").style ="background-color:#10d510;color:white" }
+            if (key.which == 79) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(10)").style ="background-color:#10d510;color:white" }
+            if (key.which == 80) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(11)").style ="background-color:#10d510;color:white" }
+            if (key.which == 219) { document.querySelector(".keyboard .row:nth-child(3) span:nth-child(12)").style ="background-color:#10d510;color:white"}
+
+            if (key.which == 221) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(13)").style ="background-color:#10d510;color:white"}
+
+
+
+            // this script only target 4rd row
+            if (key.which == 20) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(1)").style ="background-color:#10d510;color:white" }
+            if (key.which == 65) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(2)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 83) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(3)").style ="background-color:#10d510;color:white" }
+            if (key.which == 68) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(4)").style ="background-color:#10d510;color:white" }
+            if (key.which == 70) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(5)").style ="background-color:#10d510;color:white" }
+            if (key.which == 71) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(6)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 72) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(7)").style ="background-color:#10d510;color:white" }
+            if (key.which == 74) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(8)").style ="background-color:#10d510;color:white" }
+            if (key.which == 75) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(9)").style ="background-color:#10d510;color:white" }
+            if (key.which == 76) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(10)").style ="background-color:#10d510;color:white" }
+            if (key.which == 186) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(11)").style ="background-color:#10d510;color:white"}
+            if (key.which == 222) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(12)").style ="background-color:#10d510;color:white"}
+
+            if (key.which == 13) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(13)").style ="background-color:#10d510;color:white" }
+            if (key.which == 220) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(14)").style ="background-color:#10d510;color:white"}
+
+            if (key.which == 65) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(2)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 83) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(3)").style ="background-color:#10d510;color:white" }
+            if (key.which == 68) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(4)").style ="background-color:#10d510;color:white" }
+            if (key.which == 70) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(5)").style ="background-color:#10d510;color:white" }
+            if (key.which == 71) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(6)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 72) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(7)").style ="background-color:#10d510;color:white" }
+            if (key.which == 74) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(8)").style ="background-color:#10d510;color:white" }
+            if (key.which == 75) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(9)").style ="background-color:#10d510;color:white" }
+            if (key.which == 76) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(10)").style ="background-color:#10d510;color:white" }
+            if (key.which == 186) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(11)").style ="background-color:#10d510;color:white"}
+            if (key.which == 222) { document.querySelector(".keyboard .row:nth-child(4) span:nth-child(12)").style ="background-color:#10d510;color:white"}
+
+            if (key.which == 13) {document.querySelector(".keyboard .row:nth-child(4) span:nth-child(13)").style ="background-color:#10d510;color:white" }
+            if (key.which == 220) {document.querySelector(".keyboard .row:nth-child(3) span:nth-child(14)").style ="background-color:#10d510;color:white"}
+
+
+
+            // this for line 5
+
+            if (key.which == 90) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(2)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 88) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(3)").style ="background-color:#10d510;color:white" }
+            if (key.which == 67) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(4)").style ="background-color:#10d510;color:white" }
+            if (key.which == 86) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(5)").style ="background-color:#10d510;color:white" }
+            if (key.which == 66) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(6)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 78) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(7)").style ="background-color:#10d510;color:white" }
+            if (key.which == 77) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(8)").style ="background-color:#10d510;color:white" }
+            if (key.which == 188) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(9)").style ="background-color:#10d510;color:white"}
+            if (key.which == 190) {document.querySelector(".keyboard .row:nth-child(5) span:nth-child(10)").style ="background-color:#10d510;color:white"}
+            if (key.which == 191) { document.querySelector(".keyboard .row:nth-child(5) span:nth-child(11)").style ="background-color:#10d510;color:white"}
+
+
+
+            // for digit keys
+            if (key.which == 192) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(1)").style ="background-color:#10d510;color:white"} 
+
+            if (key.which == 49) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(2)").style ="background-color:#10d510;color:white" }
+            if (key.which == 8) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(14)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 50) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(3)").style ="background-color:#10d510;color:white" }
+            if (key.which == 51) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(4)").style ="background-color:#10d510;color:white" }
+            if (key.which == 52) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(5)").style ="background-color:#10d510;color:white" }
+            if (key.which == 53) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(6)").style ="background-color:#10d510;color:white" }
+
+            if (key.which == 54) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(7)").style ="background-color:#10d510;color:white" }
+            if (key.which == 55) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(8)").style ="background-color:#10d510;color:white" }
+            if (key.which == 56) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(9)").style ="background-color:#10d510;color:white" }
+            if (key.which == 57) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(10)").style ="background-color:#10d510;color:white" }
+            if (key.which == 48) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(11)").style ="background-color:#10d510;color:white" }
+            if (key.which == 189) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(12)").style ="background-color:#10d510;color:white"}
+            if (key.which == 187) {document.querySelector(".keyboard .row:nth-child(2) span:nth-child(13)").style ="background-color:#10d510;color:white"}
+
+
+
+            // FOR F KEYS 
+
+            if (key.which == 27) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(1)").style ="background-color:#10d510;color:white" } 
+
+            if (key.which == 112) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(2)").style ="background-color:#10d510;color:white"   }
+
+            if (key.which == 113) { document.querySelector(".keyboard .row:nth-child(1) span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 114) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(4)").style ="background-color:#10d510;color:white"}
+            if (key.which == 115) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(5)").style ="background-color:#10d510;color:white"}
+            if (key.which == 116) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(6)").style ="background-color:#10d510;color:white"}
+
+            if (key.which == 117) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(7)").style ="background-color:#10d510;color:white"}
+            if (key.which == 118) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(8)").style ="background-color:#10d510;color:white"}
+            if (key.which == 119) { document.querySelector(".keyboard .row:nth-child(1) span:nth-child(9)").style ="background-color:#10d510;color:white"}
+            if (key.which == 120) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(10)").style ="background-color:#10d510;color:white"}
+            if (key.which == 121) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(11)").style ="background-color:#10d510;color:white"}
+            if (key.which == 122) {document.querySelector(".keyboard .row:nth-child(1) span:nth-child(12)").style ="background-color:#10d510;color:white"}
+            if (key.which == 123) { document.querySelector(".keyboard .row:nth-child(1) span:nth-child(13)").style ="background-color:#10d510;color:white"}
+        
+
+
+        // FOR ROW 6TH
+
+        if (key.which == 32) {document.querySelector(".keyboard .row:nth-child(6) span:nth-child(4)").style ="background-color:#10d510;color:white"}
+
+
+
+                    //   for other keys
+
+
+                    // for arrow keys only
+
+            if (key.which == 37) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 39) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 38) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey div div:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 40) {document.querySelector(".keyboard .row:nth-child(6) .arrowkey div div:nth-child(2)").style ="background-color:#10d510;color:white"}
+
+
+            
+                            //for alt key
+
+                            let rightAlt = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(5)"),
+                 leftAlt = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(3)");
+
+                 if(key.which == 18){
+
+                    if (event.location == 1){leftAlt.style = "background-color:#10d510;color:white"}
+                    if (event.location == 2){rightAlt.style = "background-color:#10d510;color:white"}
+                 }
+
+
+                //  for windows key
+
+                let rightWindows = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(6)"),
+                 leftWindows = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(2)");
+
+                 if(key.which == 91){leftWindows.style = "background-color:#10d510;;color:white"}
+                 if(key.which == 92){rightWindows.style = "background-color:#10d510;;color:white"}
+                            
+                    // for shift key
+
+                    let rightShift = document.querySelector(".keyboard .row:nth-child(5) span:nth-child(12)"),
+                 leftShift = document.querySelector(".keyboard .row:nth-child(5) span:nth-child(1)");
+
+                 if(key.which == 16){
+
+                    if (event.location == 1){leftShift.style = "background-color:#10d510;color:white"}
+                    if (event.location == 2){rightShift.style = "background-color:#10d510;color:white"}
+                 }
+
+                //  for control key
+
+                // for shift key
+
+                let rightctrl = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(7)"),
+                 leftctrl = document.querySelector(".keyboard .row:nth-child(6) span:nth-child(1)");
+
+                 if(key.which == 17){
+
+                    if (event.location == 1){leftctrl.style = "background-color:#10d510;color:white"}
+                    if (event.location == 2){rightctrl.style = "background-color:#10d510;color:white"}
+                 }
+        })
+    </script>
+</body>
+</html>
