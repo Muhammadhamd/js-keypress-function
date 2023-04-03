@@ -202,6 +202,21 @@
     .numpad .right-div div:nth-child(3){
         height: 112px;
     }
+
+    /* for warning messege */
+    .warning{
+        font-family: "Poppins";
+        color: red;
+        height: 10px;
+    }
+
+
+    /* if the site is not open on pc */
+    @media screen and (max-width:900px) {
+        .keyboard{
+            display: none;
+        }
+    }
 </style>
 <body>
     <div class="main-container">
@@ -353,6 +368,10 @@
                         <div>+</div>
                         <div>enter</div>
                     </div>
+                </div>
+                <!-- if the numpad is locked the mesege willbe display -->
+                <div class="warning">
+
                 </div>
             </div>
         </div>
@@ -547,9 +566,38 @@
                     if (event.location == 1){leftctrl.style = "background-color:rgb(200 200 206 / 63%);color:white"}
                     if (event.location == 2){rightctrl.style = "background-color:rgb(200 200 206 / 63%);color:white"}
                  }
-                })
 
 
+
+                //  numpad
+
+                 if (key.which == 144){document.querySelector(".numpad .row:nth-child(1) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 111) {document.querySelector(".numpad .row:nth-child(1) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 106) {document.querySelector(".numpad .row:nth-child(1) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 103) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 104) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 105) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 100) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 101) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 102) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 97) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 98) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 99) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 96) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 110) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 110) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 109) {document.querySelector(".numpad .right-div div:nth-child(1)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 107) {document.querySelector(".numpad .right-div div:nth-child(2)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+            if (key.which == 13) {document.querySelector(".numpad .right-div div:nth-child(3)").style ="background-color:rgb(200 200 206 / 63%);color:white"}
+                
+        
+        
+        
+        
+        })
+
+
+                
                 // for keyup
 
                 addEventListener("keyup",
@@ -737,6 +785,48 @@
                     if (event.location == 1){leftctrl.style = "background-color:#10d510;color:white"}
                     if (event.location == 2){rightctrl.style = "background-color:#10d510;color:white"}
                  }
+
+
+                //  NUMPAD
+                
+
+                if (key.which == 144){document.querySelector(".numpad .row:nth-child(1) span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 111) {document.querySelector(".numpad .row:nth-child(1) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 106) {document.querySelector(".numpad .row:nth-child(1) span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 103) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 104) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 105) {document.querySelector(".numpad .row:nth-child(2) span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 100) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 101) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 102) {document.querySelector(".numpad .row:nth-child(3) span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 97) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 98) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 99) {document.querySelector(".numpad .row:nth-child(4) span:nth-child(3)").style ="background-color:#10d510;color:white"}
+            if (key.which == 96) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 110) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 110) {document.querySelector(".numpad .row:nth-child(5) span:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 109) {document.querySelector(".numpad .right-div div:nth-child(1)").style ="background-color:#10d510;color:white"}
+            if (key.which == 107) {document.querySelector(".numpad .right-div div:nth-child(2)").style ="background-color:#10d510;color:white"}
+            if (key.which == 13) {document.querySelector(".numpad .right-div div:nth-child(3)").style ="background-color:#10d510;color:white"}
+
+         
+        
+        })
+
+        // if the numpad is locked
+
+        document.addEventListener("keydown",
+        function (key) {
+            let messege = document.querySelector(".warning");
+    
+            if(key.getModifierState("NumLock")){
+                messege.innerHTML="";
+                console.log("numpad is UN-locked");
+            }else{
+                messege.innerHTML="numpad is locked please unlock it to check tere keys";
+               
+                console.log("numpad is locked");
+            }
         })
     </script>
 </body>
